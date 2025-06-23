@@ -1,10 +1,18 @@
-/* Common styles for both forms */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #4285f4;
+  height: 100vh;
+}
 .login {
   text-align: center;
 }
 
 form {
   max-width: 400px;
+    width: 100%;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 8px;
@@ -17,7 +25,6 @@ form {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    cursor: pointer;
     a {
       color: #4285f4;
       text-decoration: none;
@@ -101,5 +108,13 @@ input {
     color: #ff3860;
     font-size: 0.8rem;
     margin: -0.5rem 0 1rem 0;
+  }
+  
+  /* Input and Button uniform width */
+  input,
+  button,
+  app-button {
+    width: 100%;
+    box-sizing: border-box;
   }
   

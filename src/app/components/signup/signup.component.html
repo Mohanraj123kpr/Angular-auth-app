@@ -1,4 +1,4 @@
-<div class="auth-container">
+<div class="login-container">
   
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <h2 class="sign-up">Signup</h2>
@@ -43,7 +43,7 @@
       <div *ngIf="confirmPassword?.errors?.['required']">
         Please confirm your password
       </div>
-      <div *ngIf="signupForm.errors?.['mismatch']">
+      <div *ngIf="!confirmPassword?.errors?.['required'] && signupForm.errors?.['mismatch']">
         Passwords do not match
       </div>
     </div>

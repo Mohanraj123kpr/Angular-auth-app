@@ -1,5 +1,12 @@
 /* Common styles for both forms */
-
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285f4;
+    height: 100vh;
+  }
 .sign-up {
   text-align: center;
 }
@@ -17,7 +24,6 @@ form {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    cursor: pointer;
     a {
       color: #4285f4;
       text-decoration: none;
@@ -81,3 +87,12 @@ input {
 .error {
   border-color: #ff3860;
 }
+
+  /* Input and Button uniform width */
+  input,
+  button,
+  app-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
