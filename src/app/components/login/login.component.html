@@ -1,8 +1,7 @@
-<div class="auth-container">
-  <h2 class="login">Login</h2>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <!-- Email Input -->
+    <h2 class="login">Login</h2>
     <input 
       formControlName="email" 
       placeholder="Email" 
@@ -74,4 +73,3 @@
       </app-button>
     </div>
   </form>
-</div>
