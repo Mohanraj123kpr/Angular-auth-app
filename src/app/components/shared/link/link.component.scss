@@ -1,0 +1,11 @@
+:host {
+    .link {
+      color: #4285f4;
+      text-decoration: none;
+      cursor: pointer;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

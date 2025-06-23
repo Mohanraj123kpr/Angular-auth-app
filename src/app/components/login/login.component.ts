@@ -5,20 +5,40 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { ButtonComponent } from '../shared/button/button.component';
+import { LinkComponent } from '../shared/link/link.component';
+import { CustomValidators } from '../../utils/validators';
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    RouterLink,
+    ButtonComponent,
+    LinkComponent,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
-export class LoginComponent {  
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {}
+export class LoginComponent {
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private router: Router
+  ) {}
   error = '';
   loginForm: any;
-  
+
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [
+          Validators.required,
+          CustomValidators.emailDomain(['.com', '.co', '.in', '.org', '.net']),
+        ],
+      ],
       password: ['', Validators.required],
     });
   }
@@ -31,4 +51,11 @@ export class LoginComponent {
     else this.error = 'Invalid credentials';
   }
 
+  // Helper methods for template
+  get email() {
+    return this.loginForm.get('email');
+  }
+  get password() {
+    return this.loginForm.get('password');
+  }
 }

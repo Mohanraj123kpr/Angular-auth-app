@@ -19,7 +19,15 @@ export class AuthService {
       return false;
     }
     const storedUser = JSON.parse(atob(data));
-    return storedUser.password === password;
+    const isValid = storedUser.password === password && storedUser.email === email;
+    if (isValid) {
+      localStorage.setItem('loggedInUser', email); // Save for dashboard use
+    }
+    return isValid;
+  }
+  
+  logout() {
+    localStorage.removeItem('loggedInUser');
   }
   
 }

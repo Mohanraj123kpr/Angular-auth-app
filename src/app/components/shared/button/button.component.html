@@ -1,0 +1,13 @@
+<button
+[type]="type"
+[disabled]="disabled"
+[class]="buttonClass"
+[class.social-btn]="isSocial"
+(click)="onClick.emit($event)"
+>
+<ng-container *ngIf="isSocial && icon">
+    <img [src]="'assets/' + icon + 'Icon.svg'" [alt]="provider" class="social-icon">
+  </ng-container>
+<ng-content>
+</ng-content>
+</button>

@@ -25,14 +25,19 @@ form {
       }
     }
   }
-  .forgot-password {
-    text-align: right;
-    margin-bottom: 1rem;
-    color: #4285f4;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+  .forgot-password-container {
+    display: flex;
+    justify-content: center;
+    .forgot-password {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #4285f4;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    
   }
 }
 
@@ -43,22 +48,13 @@ input {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  &.error {
+    border-color: #ff3860;
+  }
+  &:focus {
+    border-color: #4285f4;
+    outline: none;
 }
-
-button[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  background-color: #4285f4;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-
-button[type="submit"]:hover {
-  background-color: #3367d6;
 }
 
 .or-divider {
@@ -89,30 +85,20 @@ button[type="submit"]:hover {
   gap: 0.5rem;
 }
 
-.social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: white;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.social-btn:hover {
-  background-color: #f5f5f5;
-}
-
-.social-icon {
-  margin-right: 8px;
-  width: 18px;
-  height: 18px;
-}
-
 .error-message {
   color: red;
   margin-bottom: 1rem;
   text-align: center;
 }
+
+/* Add to your component's SCSS file or global styles */
+.error {
+    border-color: #ff3860 !important;
+  }
+  
+  .error-message {
+    color: #ff3860;
+    font-size: 0.8rem;
+    margin: -0.5rem 0 1rem 0;
+  }
+  
