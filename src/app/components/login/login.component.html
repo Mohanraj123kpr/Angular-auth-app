@@ -1,0 +1,29 @@
+<div class="auth-container">
+    <h2 class="login">Login</h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input formControlName="email" placeholder="Email" type="email" />
+      <input type="password" formControlName="password" placeholder="Password" />
+      
+      <a class="forgot-password link" routerLink="/forgot-password">Forgot password?</a>
+      
+      <div *ngIf="error" class="error-message">{{ error }}</div>
+      
+      <button type="submit">Login</button>
+      
+      <div class="sign-up-link"><span>Don't have an account?</span><a routerLink="/signup" class="link">Sign-up</a></div>
+      
+      <div class="or-divider">Or</div>
+      
+      <div class="social-login">
+        <button type="button" class="social-btn">
+          <img src="assets/facebookIcon.svg" alt="Facebook" class="social-icon">
+          Login with Facebook
+        </button>
+        <button type="button" class="social-btn">
+          <img src="assets/googleIcon.svg" alt="Google" class="social-icon">
+          Login with Google
+        </button>
+      </div>
+    </form>
+  </div>
